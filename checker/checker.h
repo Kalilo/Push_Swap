@@ -8,6 +8,20 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft.h"
+
+/*defines*/
+# define CMD_SA 1
+# define CMD_SB 2
+# define CMD_SS 3
+# define CMD_PA 4
+# define CMD_PB 5
+# define CMD_RA 6
+# define CMD_RB 7
+# define CMD_RR 8
+# define CMD_RRA 9
+# define CMD_RRB 10
+# define CMD_RRR 11
+
 /*Prototypes*/
 	/*check_args.c*/
 int		check_args(int argv, char ***argc);
@@ -15,5 +29,12 @@ int		check_dup(int argv, char ***argc);
 int		check_letters(int argv, char ***argc);
 int		ft_is_valid(char c);
 int		check_double(int argv, char ***argc);
-
+	/*ft_swap.c*/
+int		ft_swap_int(int);
+	/*rotate.c*/
+int		rotate_forward(int **list, int size);
+int		rotate_backwards(int **list, int size);
+	/*insert_ele.c*/
+int		inset_ele(int **list, int size, int element);
+int		remove_ele(int **list, int size, int element);
 #endef
