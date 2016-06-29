@@ -12,7 +12,7 @@ int	check_letters(int argv, char ***argc)
 {
 	int		k;
 	int		l;
-	
+
 	k = 1;
 	while (k < argv)
 	{
@@ -30,7 +30,7 @@ int	check_dup(int argv, char ***argc)
 {
 	int		k;
 	int		l;
-	
+
 	k = 1;
 	while (k < argv - 1)
 	{
@@ -44,9 +44,35 @@ int	check_dup(int argv, char ***argc)
 	return (1);
 }
 
+int	check_double(int argv, char ***argc)
+{
+	intk;
+	intl;
+
+	k = 0;
+	while (k < argv)
+	{
+		l = 0;
+		while (*argc[1][l] && *argc[1][l] != '\0' && *argc[1][l + 1])
+		{
+			if (*argc[1][l] == ' ' && *argc[1][l] == ' ')
+				return (0);
+			else if (*argc[1[l] == '-' && *argc[1][l] == ' ')
+				return (0);
+			else if (*argc[1[l] == '-' && *argc[1][l] == '-')
+				return (0);
+			l++;
+		}
+		k++;
+	}
+	return (1);
+}
+
 int	check_args(int argv, char ***argc)
 {
 	if (!(check_letters(argv, argc)) || !(check_dup(argv, argc)))
+		return (0);
+	if (!(check_double(argv, argc)))
 		return (0);
 	return (1);
 }
