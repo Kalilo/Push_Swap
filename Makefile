@@ -85,5 +85,12 @@ fclean: clean
 
 re: fclean all
 	@echo "re Done!"
+	
+qme:
+	@rm -Rf author
+	@whoami > author
+	
+me: qme
+	cat -a author
 
 .PHONY: clean fclean re odir
