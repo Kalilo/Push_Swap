@@ -49,17 +49,17 @@ int	check_double(int argv, char ***argc)
 	intk;
 	intl;
 
-	k = 0;
+	k = 1;
 	while (k < argv)
 	{
 		l = 0;
-		while (*argc[1][l] && *argc[1][l] != '\0' && *argc[1][l + 1])
+		while (*argc[k][l] && *argc[k][l] != '\0' && *argc[k][l + 1])
 		{
-			if (*argc[1][l] == ' ' && *argc[1][l] == ' ')
+			if (*argc[k][l] == ' ' && *argc[k][l] == ' ')
 				return (0);
-			else if (*argc[1[l] == '-' && *argc[1][l] == ' ')
+			else if (*argc[k][l] == '-' && *argc[k][l] == ' ')
 				return (0);
-			else if (*argc[1[l] == '-' && *argc[1][l] == '-')
+			else if (*argc[k][l] == '-' && *argc[k][l] == '-')
 				return (0);
 			l++;
 		}
