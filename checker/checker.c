@@ -2,7 +2,11 @@
 
 int checker(t_main *data)
 {
+    char    *input;
+    
     display_init(data);
+    input = read_input;
+    while ()
     return (1);
 }
 
