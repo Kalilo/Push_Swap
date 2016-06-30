@@ -68,4 +68,9 @@ int     do_rotate(t_main *data);
 int     do_command(t_main *data);
     /*save_args.c*/
 int     save_args(t_main *data, int argv, char **argc);
+    /*display_init.c*/
+int     display_init(t_main *data);
+    /*check_order.c*/
+int     check_order(t_main *data);
+
 #endif

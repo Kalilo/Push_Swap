@@ -1,5 +1,11 @@
 #include "checker.h"
 
+int checker(t_main *data)
+{
+    display_init(data);
+    return (1);
+}
+
 int	main(int argv, char **argc)
 {
     t_main  data;
@@ -8,7 +14,7 @@ int	main(int argv, char **argc)
 		return (1);
 	else
 	{
-		if (!(check_args(argv, argc)))
+		if (!(check_args(argv, &argc)))
 		{
 			ft_putstr("error\n");
 			return (1);
@@ -21,7 +27,7 @@ int	main(int argv, char **argc)
                 return (1);
             }
             checker(&data);
-            display_loop(&data);
+            //display_loop(&data);
         }
 	}
 	return (0);
