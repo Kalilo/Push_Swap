@@ -22,6 +22,13 @@
 # define CMD_RRB 10
 # define CMD_RRR 11
 
+    /*Shorthand*/
+# define L_A data->list_a.list
+# define L_B data->list_b.list
+# define S_A data->list_a.size
+# define S_B data->list_b.size
+# define CM data->command
+
 /*Structures*/
     /*Int Lists*/
 typedef struct  s_int_list
@@ -51,5 +58,5 @@ int		rotate_forward(int **list, int size);
 int		rotate_backwards(int **list, int size);
 	/*insert_ele.c*/
 int		insert_ele(int **list, int size, int element);
-int		remove_ele(int **list, int size, int element);
+int		remove_ele(int **list, int size);
 #endef

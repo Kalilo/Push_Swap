@@ -26,7 +26,7 @@ int	insert_ele(int **list, int size, int element)
 	return (1);
 }
 
-int	remove_ele(int **list, int size, int element)
+int	remove_ele(int **list, int size)
 {
 	int	k;
 
