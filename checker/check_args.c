@@ -17,9 +17,9 @@ int	check_letters(int argv, char ***argc)
 	while (k < argv)
 	{
 		l = 0;
-		while (*argc[1][l] && *argc[1][k] != '\0')
+		while (*argc[k][l] && *argc[k][l] != '\0')
 		{
-			if (!(ft_is_valid(argv, argc)))
+			if (!(ft_is_valid(*argc[k][l])))
 				return (0);
 		}
 	}
@@ -37,8 +37,9 @@ int	check_dup(int argv, char ***argc)
 		l = k + 1;
 		while (l < argv)
 		{
-			if (ft_atoi(argc[k]) == ft_atoi(argc[l]))
+			if (ft_atoi(*argc[k]) == ft_atoi(*argc[l]))
 				return (0);
+            l++;
 		}
 	}
 	return (1);
@@ -46,8 +47,8 @@ int	check_dup(int argv, char ***argc)
 
 int	check_double(int argv, char ***argc)
 {
-	intk;
-	intl;
+	int     k;
+	int     l;
 
 	k = 1;
 	while (k < argv)
@@ -55,11 +56,12 @@ int	check_double(int argv, char ***argc)
 		l = 0;
 		while (*argc[k][l] && *argc[k][l] != '\0' && *argc[k][l + 1])
 		{
-			if (*argc[k][l] == ' ' && *argc[k][l] == ' ')
+			if (*argc[k][l] == ' ' && *argc[k][l + 1] == ' ')
 				return (0);
-			else if (*argc[k][l] == '-' && *argc[k][l] == ' ')
+			else if (*argc[k][l] == '-' && *argc[k][l + 1] == ' ')
 				return (0);
-			else if (*argc[k][l] == '-' && *argc[k][l] == '-')
+			else if (*argc[k][l] == '-' && 
+                !('0' <= *argc[k][l] && *argc[k][l + 1] <= '9'))
 				return (0);
 			l++;
 		}

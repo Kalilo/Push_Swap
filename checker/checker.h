@@ -62,4 +62,8 @@ int		rotate_backwards(int **list, int size);
 	/*insert_ele.c*/
 int		insert_ele(int **list, int size, int element);
 int		remove_ele(int **list, int size);
+    /*commands.c*/
+int     do_swap(t_main *data);
+int     do_rotate(t_main *data);
+int     do_command(t_main *data);
 #endif
