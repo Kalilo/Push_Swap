@@ -77,5 +77,8 @@ int     not_end(char c);
 int     validate command(char *str);
     /*read_input.c*/
 int     read_input(**str);
+int     save_swap(t_main *data, char *str);
+int     save_rotate(t_main *data, char * str);
+int     save_input(t_main *data, char *str);
 
 #endif
