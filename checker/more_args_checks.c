@@ -27,9 +27,9 @@ int	check_len(int argv, char ***argc)
 	int		k;
 
 	k = 1;
-	while (k < argc)
+	while (k < argv)
 	{
-		if (ft_strlen_num(*argc[k]) > 10000)
+		if (ft_strlen_int(*argc[k]) > 10000)
 			return (0);
 		k++;
 	}

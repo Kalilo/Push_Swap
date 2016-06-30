@@ -1,5 +1,5 @@
-#ifndef AWESOME_CHECKER
-#define AWESOME_CHECKER
+#ifndef CHECKER_H
+# define CHECKER_H
 
 /*Includes*/
 # include <unistd.h>
@@ -35,7 +35,7 @@ typedef struct  s_int_list
 {
     int         **list;
     int         size;
-}
+}               t_int_list;
     /*Main Data*/
 typedef struct  s_main
 {
@@ -51,12 +51,15 @@ int		check_dup(int argv, char ***argc);
 int		check_letters(int argv, char ***argc);
 int		ft_is_valid(char c);
 int		check_double(int argv, char ***argc);
+    /*more_args_checks.c*/
+int	    ft_strlen_int(char *str);
+int	    check_len(int argv, char ***argc);
 	/*ft_swap.c*/
-int		ft_swap_int(int);
+int	    ft_swap_int(int	*a, int *b);
 	/*rotate.c*/
 int		rotate_forward(int **list, int size);
 int		rotate_backwards(int **list, int size);
 	/*insert_ele.c*/
 int		insert_ele(int **list, int size, int element);
 int		remove_ele(int **list, int size);
-#endef
+#endif

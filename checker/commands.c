@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "checker.h"
+
 int     do_swap(t_main *data)
 {
 	if (CM == CMD_SA)
@@ -23,20 +25,20 @@ int     do_swap(t_main *data)
 	}
     else if (CM == CMD_PA)
     {
-        S_A += insert_ele(L_A, S_A, L_B[1]);
+        S_A += insert_ele(L_A, S_A, *L_B[1]);
         S_B -= remove_ele(L_B, S_B);
     }
     else if (CM == CMD_PB)
     {
-        S_B += insert_ele(L_B, S_B, L_A[1]);
-        S_A -= insert_ele(L_A, S_A)
+        S_B += insert_ele(L_B, S_B, *L_A[1]);
+        S_A -= remove_ele(L_A, S_A);
     }
     else
         return (0);
 	return (1);
 }
 
-int     do_rotate(t_main data)
+int     do_rotate(t_main *data)
 {
     if (CM == CMD_RA)
         rotate_forward(L_A, S_A);

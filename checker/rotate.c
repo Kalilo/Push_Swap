@@ -26,7 +26,7 @@ int	rotate_forward(int **list, int size)
 	return (1);
 }
 
-int	rotate_backwards(int *list, int size)
+int	rotate_backwards(int **list, int size)
 {
 	int		k;
 	int		temp;
