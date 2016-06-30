@@ -22,6 +22,21 @@
 # define CMD_RRB 10
 # define CMD_RRR 11
 
+/*Structures*/
+    /*Int Lists*/
+typedef struct  s_int_list
+{
+    int         **list;
+    int         size;
+}
+    /*Main Data*/
+typedef struct  s_main
+{
+    t_int_list  list_a;
+    t_int_list  list_b;
+    int         command;
+}               t_main;
+
 /*Prototypes*/
 	/*check_args.c*/
 int		check_args(int argv, char ***argc);
@@ -35,6 +50,6 @@ int		ft_swap_int(int);
 int		rotate_forward(int **list, int size);
 int		rotate_backwards(int **list, int size);
 	/*insert_ele.c*/
-int		inset_ele(int **list, int size, int element);
+int		insert_ele(int **list, int size, int element);
 int		remove_ele(int **list, int size, int element);
 #endef
