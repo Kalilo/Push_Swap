@@ -15,8 +15,13 @@ int	main(int argv, char **argc)
 		}
 		else
         {
-            save_args(data, argv, argc);
-            checker(data);
+            if (!(save_args(&data, argv, argc)))
+            {
+                ft_putstr("error\n");
+                return (1);
+            }
+            checker(&data);
+            display_loop(&data);
         }
 	}
 	return (0);

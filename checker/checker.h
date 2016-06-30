@@ -66,4 +66,6 @@ int		remove_ele(int **list, int size);
 int     do_swap(t_main *data);
 int     do_rotate(t_main *data);
 int     do_command(t_main *data);
+    /*save_args.c*/
+int     save_args(t_main *data, int argv, char **argc);
 #endif
