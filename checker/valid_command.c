@@ -7,7 +7,7 @@ int	not_end(char c)
 	return (0);
 }
 
-int	validate command(char *str)
+int	validate_command(char *str)
 {
 	if (not_end(*str) && not_end(str[1] && !(not_end[str[2]])))
 	{

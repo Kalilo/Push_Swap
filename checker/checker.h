@@ -68,13 +68,14 @@ int		do_rotate(t_main *data);
 int		do_command(t_main *data);
 	/*save_args.c*/
 int		save_args(t_main *data, int argv, char **argc);
-	/*display_init.c*/
+	/*display.c*/
 int		display_init(t_main *data);
+int		display_status(t_main);
 	/*check_order.c*/
 int		check_order(t_main *data);
 	/*validate_command.c*/
 int		not_end(char c);
-int		validate command(char *str);
+int		validate_command(char *str);
 	/*read_input.c*/
 int		read_input(**str);
 int		save_swap(t_main *data, char *str);
