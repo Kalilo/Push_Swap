@@ -39,7 +39,7 @@ int	check_dup(int argv, char ***argc)
 		{
 			if (ft_atoi(*argc[k]) == ft_atoi(*argc[l]))
 				return (0);
-            l++;
+			l++;
 		}
 	}
 	return (1);
@@ -47,8 +47,8 @@ int	check_dup(int argv, char ***argc)
 
 int	check_double(int argv, char ***argc)
 {
-	int     k;
-	int     l;
+	int			k;
+	int			l;
 
 	k = 1;
 	while (k < argv)
@@ -61,7 +61,7 @@ int	check_double(int argv, char ***argc)
 			else if (*argc[k][l] == '-' && *argc[k][l + 1] == ' ')
 				return (0);
 			else if (*argc[k][l] == '-' && 
-                !('0' <= *argc[k][l] && *argc[k][l + 1] <= '9'))
+					!('0' <= *argc[k][l] && *argc[k][l + 1] <= '9'))
 				return (0);
 			l++;
 		}
