@@ -29,6 +29,20 @@
 # define S_B data->list_b.size
 # define CM data->command
 
+	/*Shortened Code*/
+# define P_TAB ft_putchar('\t');
+# define P_NL ft_putchar('\n');
+# define P_A ft_itoa(*L_A[k]);
+# define P_B ft_itoa(*L_B[k]);
+# define P_ANB P_A P_TAB P_B P_NL
+# define P_OA P_A P_NL
+# define P_OB P_TAB P_TAB P_B P_NL
+
+# define I_P_ANB if (k < S_A && l < S_B) {P_ANB}
+# define I_P_OA else if (k < S_A && !(l < S_B)) {P_OA}
+# define I_P_OB else if (!(k < S_A) && l < S_B) {P_OB}
+# define 
+
 /*Structures*/
 	/*Int Lists*/
 typedef struct	s_int_list

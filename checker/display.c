@@ -8,7 +8,8 @@ k = 0;
 	ft_putstr("init a and b:\n");
 	while (k < S_A)
 	{
-		ft_printf("%i\n", *L_A[k]);
+		ft_itoa(*L_A[k]);
+		ft_putchar('\n');
 		k++;
 	}
 	ft_putstr("_\t_\na\tb\n");
@@ -24,12 +25,9 @@ int	display_status(t_main data)
 	l = 0;
 	while (k < S_A || l < S_B)
 	{
-		if (k < S_A && l < S_B)
-			ft_printf("%i\t%i\n", L_A[k], L_B[l]);
-		else if (k < S_A && !(l < S_B))
-			ft_printf("%i\n", L_A[k]);
-		else if (!(k < S_A) && l < S_B)
-			ft_printf("\t\t%i\n", L_B[l]);
+		I_P_ANB
+		I_P_OA
+		I_P_OB
 		k++;
 		l++;
 	}

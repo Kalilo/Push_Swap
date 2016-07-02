@@ -1,4 +1,4 @@
-#include "checker.h"
+#include "push_swap.h"
 
 int		save_args(t_main *data, int argv, char **argc)
 {
