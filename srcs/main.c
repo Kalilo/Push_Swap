@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggroener <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/22 12:01:16 by ggroener          #+#    #+#             */
-/*   Updated: 2016/06/22 12:49:37 by ggroener         ###   ########.fr       */
+/*   Created: 2016/07/02 14:04:23 by ggroener          #+#    #+#             */
+/*   Updated: 2016/07/02 15:33:14 by ggroener         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,20 @@ static void		choose_sort(t_env *env)
 	ft_putchar('\n');
 }
 
-int				main(int argc, char **argv)
+int				main(int ac, char **av)
 {
 	t_env	*env;
 
-	if (!(env = mallock(sizeof(*env))))
+	if (!(env = malloc(sizeof(*env))))
 		return (-1);
 	env->count = 0;
-	parse_args(env, argc, argv);
+	parse_args(env, ac, av);
 	calc_sorted(env);
 	if (!is_sorted(env))
 		choose_sort(env);
 	ft_putendl("\n\033[1;37mStack A:\033[0;37m");
 	print_a(env);
-	ft_putendl("\n\033[1;37mStack B:\033[0;37m");
+	ft_putendl("\033[1;37mStack B:\033[0;37m");
 	print_b(env);
 	ft_putstr("\033[1;32mCount number: \033[1;37m");
 	ft_putnbr(env->count);

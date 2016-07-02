@@ -6,7 +6,7 @@
 #    By: ggroener <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/22 11:13:09 by ggroener          #+#    #+#              #
-#    Updated: 2016/07/02 01:55:30 by khansman         ###   ########.fr        #
+#    Updated: 2016/07/02 14:44:24 by ggroener         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ CC = gcc
 INCLUDES_PATH = includes/
 
 SRCS_PATH = srcs/
-
-HEADER = 
 
 SRCS_NAME = main.c \
 			parse_args.c \
@@ -43,7 +41,7 @@ SRCS_NAME = main.c \
 			ra.c \
 			rb.c \
 			rr.c \
-			rra. \
+			rra.c \
 			rrb.c \
 			rrr.c \
 
@@ -57,12 +55,19 @@ OBJS = $(addprefix $(OBJS_PATH), $(OBJS_NAME))
 
 LIBRARY = -L libft/ -lft
 
-all: odir $(NAME)
+HEADER = $(INCLUDES_PATH)env.h \
+		 $(INCLUDES_PATH)includes.h \
+		 $(INCLUDES_PATH)prototypes.h \
+		 $(INCLUDES_PATH)push_swap.h \
+		 $(INCLUDES_PATH)sort.h \
+
+all: qme odir $(NAME)
 
 $(NAME): $(OBJS)
 	@Make -C libft
 	@echo " - Making $(NAME)"
 	@$(CC) $(CFLAGS) -o $(NAME) $^ $(LIBRARY) -I$(INCLUDES_PATH)
+	@clear
 	@echo "Make Done!"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
@@ -87,7 +92,15 @@ fclean: clean
 
 re: fclean all
 	@echo "re Done!"
-	
+
+format: norm me
+
+norm:
+	@clear
+	@echo "Norminette:"
+	@norminette $(SRCS)
+	@norminette $(HEADER)
+
 qme:
 	@rm -Rf author
 	@whoami > author
