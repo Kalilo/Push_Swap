@@ -6,7 +6,7 @@
 #    By: ggroener <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/22 11:13:09 by ggroener          #+#    #+#              #
-#    Updated: 2016/06/22 11:33:46 by ggroener         ###   ########.fr        #
+#    Updated: 2016/07/02 01:55:30 by khansman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ CC = gcc
 INCLUDES_PATH = includes/
 
 SRCS_PATH = srcs/
+
+HEADER = 
 
 SRCS_NAME = main.c \
 			parse_args.c \

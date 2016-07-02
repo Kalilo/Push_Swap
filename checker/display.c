@@ -15,7 +15,7 @@ k = 0;
 	return (1);
 }
 
-int	display_status(t_main)
+int	display_status(t_main data)
 {
 	int		k;
 	int		l;

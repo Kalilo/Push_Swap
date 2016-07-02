@@ -1,6 +1,6 @@
 #include "checker.h"
 
-int	read_input(**str)
+int	read_input(char **str)
 {
 	int		k;
 	char	buff;
@@ -46,7 +46,7 @@ int	save_swap(t_main *data, char *str)
 	return (1);
 }
 
-int	save_rotate(t_main *data, char * str)
+int	save_rotate(t_main *data, char *str)
 {
 	if (not_end(*str) && not_end(str[1]))
 	{
