@@ -27,7 +27,7 @@ int		is_verbose(char **args)
 
 int		is_colourful(char **args)
 {
-		int		v;
+	int		v;
 	int		k;
 
 	v = 0;
@@ -35,7 +35,7 @@ int		is_colourful(char **args)
 	while (args[++k])
 		if (!ft_strcmp(args[k], "-c"))
 			v++;
-	return (v);	
+	return (v);
 }
 
 int		int_data(t_main *data)
@@ -51,13 +51,12 @@ int		int_data(t_main *data)
 
 int		save_args(t_main *data, int argv, char **argc)
 {
-	int			k;
-	int			l;
-	int			m;
-	char		**nums;
+	int		k;
+	int		l;
+	int		m;
+	char	**nums;
 
-	k = 0;
-	m = 0;
+	INIT_VAR;
 	if (!(int_data(data)))
 		return (0);
 	while (++k < argv)

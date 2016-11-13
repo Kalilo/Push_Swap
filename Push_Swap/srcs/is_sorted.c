@@ -41,7 +41,7 @@ int		is_verbose(char **args)
 
 int		is_colourful(char **args)
 {
-		int		v;
+	int		v;
 	int		k;
 
 	v = 0;
@@ -49,5 +49,5 @@ int		is_colourful(char **args)
 	while (args[++k])
 		if (!ft_strcmp(args[k], "-c"))
 			v++;
-	return (v);	
+	return (v);
 }
