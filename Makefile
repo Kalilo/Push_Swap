@@ -27,6 +27,19 @@ all: qme
 	@Make -C libft
 	@$(call colourecho, "Making checker")
 	@Make -C checker
+	@$(call colourecho, "Making checker")
+	@Make -C checker
+	@$(call colourecho, "Done compiling all.")
+
+libft:
+	@$(call colourecho, "Making libft")
+	@Make -C libft
+
+checker:
+	@$(call colourecho, "Making checker")
+	@Make -C checker
+
+push_swap:
 	@$(call colourecho, "Making push_swap")
 	@Make -C push_swap
 
