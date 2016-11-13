@@ -19,6 +19,7 @@ void	parse_args(t_env *env, int ac, char **av);
 void	check_dur(t_env *env);
 int		valid_int(int ac, char **av);
 int		is_sorted(t_env *env);
+int		is_verbose(char **args);
 void	error_quit(char *str);
 void	calc_sorted(t_env *env);
 void	pre_sort(t_env *env);

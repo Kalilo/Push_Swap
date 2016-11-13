@@ -57,6 +57,25 @@ static void		free_env(t_env *env)
 	free(env);
 }
 
+void			verbose(t_env *env, char **av)
+{
+	int		k;
+
+	k = 0;
+	while (av[++k])
+		if (!ft_strcmp(av[k], "-v"))
+		{
+			ft_putendl("\n\033[1;37mStack A:\033[0;37m");
+			print_a(env);
+			ft_putendl("\033[1;37mStack B:\033[0;37m");
+			print_b(env);
+			ft_putstr("\033[1;32mCount number: \033[1;37m");
+			ft_putnbr(env->count);
+			ft_putchar('\n');
+			return ;
+		}
+}
+
 int				main(int ac, char **av)
 {
 	t_env	*env;
@@ -69,13 +88,7 @@ int				main(int ac, char **av)
 	calc_sorted(env);
 	if (!is_sorted(env))
 		choose_sort(env);
-	ft_putendl("\n\033[1;37mStack A:\033[0;37m");
-	print_a(env);
-	ft_putendl("\033[1;37mStack B:\033[0;37m");
-	print_b(env);
-	ft_putstr("\033[1;32mCount number: \033[1;37m");
-	ft_putnbr(env->count);
-	ft_putchar('\n');
+	verbose(env, av);
 	free_env(env);
 	return (0);
 }

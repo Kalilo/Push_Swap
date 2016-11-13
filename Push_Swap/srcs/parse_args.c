@@ -17,18 +17,15 @@ static int		valid_args(int ac, char **av)
 	size_t	j;
 	int		i;
 
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (++i < ac)
 	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] != '-' && (av[i][j] < '0'
-					|| av[i][j] > '9'))
+		if (!ft_strcmp(av[i], "-v"))
+			continue ;
+		j = -1;
+		while (av[i][++j])
+			if (av[i][j] != '-' && (av[i][j] < '0' || av[i][j] > '9'))
 				return (0);
-			j++;
-		}
-		i++;
 	}
 	return (1);
 }
@@ -56,12 +53,18 @@ static int		has_doublons(t_env *env)
 static void		fill_stack(int *stack, int ac, char **av)
 {
 	int		i;
+	int		tmp;
+	int		k;
 
-	i = 1;
-	while (i < ac)
+	tmp = 0;
+	i = 0;
+	k = ac - is_verbose(av) - 1;
+	while (++i < ac)
 	{
-		stack[ac - i - 1] = ft_atoi(av[i]);
-		i++;
+		if (!ft_strcmp(av[i], "-v"))
+			tmp += 1;
+		else
+			stack[k - i + tmp] = ft_atoi(av[i]);
 	}
 }
 
@@ -94,7 +97,7 @@ void			parse_args(t_env *env, int ac, char **av)
 		error_quit("Failed to malloc stack a\n");
 	if (!(env->stack_b = malloc(sizeof(*env->stack_b) * (ac - 1))))
 		error_quit("Failed to malloc stack b\n");
-	env->stack_a_size = ac - 1;
+	env->stack_a_size = ac - 1 - is_verbose(av);
 	env->stack_b_size = 0;
 	fill_stack(env->stack_a, ac, av);
 	if (has_doublons(env))

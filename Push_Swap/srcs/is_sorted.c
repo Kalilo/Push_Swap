@@ -25,3 +25,16 @@ int		is_sorted(t_env *env)
 	}
 	return (1);
 }
+
+int		is_verbose(char **args)
+{
+	int		v;
+	int		k;
+
+	v = 0;
+	k = 0;
+	while (args[++k])
+		if (!ft_strcmp(args[k], "-v"))
+			v++;
+	return (v);
+}
