@@ -25,6 +25,19 @@ int		is_verbose(char **args)
 	return (v);
 }
 
+int		is_colourful(char **args)
+{
+		int		v;
+	int		k;
+
+	v = 0;
+	k = 0;
+	while (args[++k])
+		if (!ft_strcmp(args[k], "-c"))
+			v++;
+	return (v);	
+}
+
 int		int_data(t_main *data)
 {
 	static int	a[1000001];
@@ -49,7 +62,7 @@ int		save_args(t_main *data, int argv, char **argc)
 		return (0);
 	while (++k < argv)
 	{
-		if (!ft_strcmp(argc[k], "-v"))
+		if (!ft_strcmp(argc[k], "-v") || !ft_strcmp(argc[k], "-c"))
 			continue ;
 		l = -1;
 		nums = ft_strsplit(argc[k], ' ');

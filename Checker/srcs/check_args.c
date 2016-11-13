@@ -27,7 +27,7 @@ int	check_letters(int argv, char **argc)
 	k = 0;
 	while (++k < argv)
 	{
-		if (!ft_strcmp(argc[k], "-v"))
+		if (!ft_strcmp(argc[k], "-v") || !ft_strcmp(argc[k], "-c"))
 			continue ;
 		l = 0;
 		while (argc[k][l] && argc[k][l] != '\0')
@@ -48,12 +48,12 @@ int	check_dup(int argv, char **argc)
 	k = 1;
 	while (k < argv - 1)
 	{
-		l = k + 1;
-		while (l < argv)
+		l = k;
+		while (++l < argv)
 		{
-			if (ft_atoi(argc[k]) == ft_atoi(argc[l]))
+			if ((ft_atoi(argc[k]) == ft_atoi(argc[l])) &&
+					!(!ft_strcmp(argc[k], "-v") || !ft_strcmp(argc[k], "-c")))
 				return (0);
-			l++;
 		}
 		k++;
 	}
@@ -68,7 +68,7 @@ int	check_double(int argv, char **argc)
 	k = 0;
 	while (++k < argv)
 	{
-		if (!ft_strcmp(argc[k], "-v"))
+		if (!ft_strcmp(argc[k], "-v") || !ft_strcmp(argc[k], "-c"))
 			continue ;
 		l = 0;
 		while (argc[k][l] && argc[k][l] != '\0' && argc[k][l + 1])

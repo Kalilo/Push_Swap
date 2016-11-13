@@ -34,9 +34,9 @@ int	checker(t_main *data)
 	}
 	free(input);
 	if (check_order(data))
-		ft_putstr("OK\n");
+		ft_putstr((COL) ? "\e[32mOK\n\e[0m" : "OK\n");
 	else
-		ft_putstr("KO\n");
+		ft_putstr((COL) ? "\e[31mKO\n\e[0m" : "KO\n");
 	return (1);
 }
 
@@ -68,17 +68,18 @@ int	main(int argv, char **argc)
 
 	ft_bzero(&data, sizeof(t_main));
 	data.verbose = is_verbose(argc);
+	data.colours = is_colourful(argc);
 	if (argv == 1)
 		return (1);
 	else if (sorted_args(argv, argc))
-		ft_putstr("OK\n");
+		ft_putstr((data.colours) ? "\e[32mOK\n\e[0m" : "OK\n");
 	else
 	{
 		if (!(check_args(argv, argc)))
 			return (1);
 		else if (!(save_args(&data, argv, argc)) || !(checker(&data)))
 		{
-			ft_putstr("error\n");
+			ft_putstr((data.colours) ? "\e[31merror\e[0m" : "error\n");
 			return (1);
 		}
 	}

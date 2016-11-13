@@ -17,6 +17,7 @@ int	display_init(t_main *data)
 	int		k;
 
 	k = 0;
+	ft_putstr((COL) ? "\e[36m" : "");
 	ft_putstr("init a and b:\n");
 	while (k < S_A)
 	{
@@ -25,6 +26,7 @@ int	display_init(t_main *data)
 		k++;
 	}
 	ft_putstr("_\t_\na\tb\n");
+	ft_putstr((COL) ? "\e[0m" : "");
 	return (1);
 }
 
@@ -33,6 +35,7 @@ int	display_status(t_main *data)
 	int		k;
 
 	k = -1;
+	ft_putstr((COL) ? "\e[34m" : "");
 	while (++k < S_A || k < S_B)
 		if (k < S_A && k < S_B)
 		{
@@ -52,6 +55,6 @@ int	display_status(t_main *data)
 			ft_putnbr(L_B[k]);
 			ft_putchar('\n');
 		}
-	ft_putstr("_\t_\na\tb\n");
+	ft_putstr((COL) ? "_\t_\na\tb\n\e[0m" : "_\t_\na\tb\n");
 	return (1);
 }
