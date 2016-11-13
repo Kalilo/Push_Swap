@@ -21,4 +21,7 @@
 
 # define PRE_SORT 50
 
+# define VER env->verbose
+# define COL env->colours
+
 #endif
