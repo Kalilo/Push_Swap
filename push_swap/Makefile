@@ -5,45 +5,45 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ggroener <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/06/22 11:13:09 by ggroener          #+#    #+#              #
-#    Updated: 2016/07/02 14:44:24 by ggroener         ###   ########.fr        #
+#    Created: 2016/09/28 11:16:22 by ggroener          #+#    #+#              #
+#    Updated: 2016/10/08 10:32:05 by khansman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror -Ofast
+CFLAGS = -Wall -Wextra -Werror -g -Ofast
 
 CC = gcc
 
 INCLUDES_PATH = includes/
 
-SRCS_PATH = srcs/
+SRCS_PATH = 	srcs/
 
-SRCS_NAME =		calc_sorted.c			\
-				check_dur.c				\
-				error_quit.c			\
-				is_sorted.c				\
-				main.c					\
-				pa.c					\
-				parse_args.c			\
-				pb.c					\
-				pre_sort.c				\
-				print_a.c				\
-				print_b.c				\
-				ra.c					\
-				rb.c					\
-				rr.c					\
-				rra.c					\
-				rrb.c					\
-				rrr.c					\
-				sa.c					\
-				sb.c					\
-				sort.c					\
-				sort_3.c				\
-				sort_5.c				\
-				ss.c					\
-				valid_int.c				\
+SRCS_NAME = 	calc_sorted.c				\
+				check_dur.c					\
+				error_quit.c				\
+				is_sorted.c					\
+				main.c						\
+				pa.c						\
+				parse_args.c				\
+				pb.c						\
+				pre_sort.c					\
+				print_a.c					\
+				print_b.c					\
+				ra.c						\
+				rb.c						\
+				rr.c						\
+				rra.c						\
+				rrb.c						\
+				rrr.c						\
+				sa.c						\
+				sb.c						\
+				sort.c						\
+				sort_3.c					\
+				sort_5.c					\
+				ss.c						\
+				valid_int.c					\
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
@@ -53,55 +53,74 @@ OBJS_NAME = $(SRCS_NAME:.c=.o)
 
 OBJS = $(addprefix $(OBJS_PATH), $(OBJS_NAME))
 
-LIBRARY = -L libft/ -lft
+#uncomment these to work on Mac and comment to work on Linux.
+LIBRARY = -lmlx -L ../libft/ -lft #-framework OpenGL -framework AppKit
 
-HEADERS =		env.h					\
-				includes.h				\
-				prototypes.h			\
-				push_swap.h				\
-				sort.h					\
+INCLUDES = -I includes/ -I ../libft/includes
 
-HEADER = $(addprefix $(INCLUDES_PATH), $(HEADERS))
+#uncomment these to work on Linux and comment to work on Mac.
+#LIBRARY = -L /usr/X11/lib -lmlx -lX11 -lm -lXext -L ../libft/ -lft
+ 
+#INCLUDES = -I includes/ -I ../libft/includes -I /usr/X11/include
+
+HEADER = 	$(INCLUDES_PATH)env.h			\
+			$(INCLUDES_PATH)includes.h		\
+			$(INCLUDES_PATH)prototypes.h	\
+			$(INCLUDES_PATH)push_swap.h		\
+			$(INCLUDES_PATH)sort.h			\
 
 all: qme odir $(NAME)
 
+define colourecho
+	@tput setaf 14
+	@echo $1
+	@tput sgr0
+endef
+
+define colourecho2
+	@tput setaf 2
+	@echo $1
+	@tput sgr0
+endef
+
 $(NAME): $(OBJS)
-	@Make -C libft
-	@echo " - Making $(NAME)"
-	@$(CC) $(CFLAGS) -o $(NAME) $^ $(LIBRARY) -I$(INCLUDES_PATH)
+	@Make -C ../libft
+	@$(call colourecho, " - Making $(NAME)")
 	@clear
-	@echo "Make Done!"
+	@$(CC) $(CFLAGS) -o $(NAME) $^ $(LIBRARY) $(INCLUDES) -I$(INCLUDES_PATH)
+	@clear
+	@$(call colourecho, "Make Done!")
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
-	@echo " - Compiling $<"
-	@$(CC) $(CFLAGS) -o $@ -c $< -I$(INCLUDES_PATH)
-	@echo "Compiling Done!"
+	@$(call colourecho, " - Compiling $<")
+	@$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $< -I$(INCLUDES_PATH)
+	@$(call colourecho, "Compiling Done!")
 
 odir:
 	@mkdir -p $(OBJS_PATH)
 
 clean:
-	@Make clean -C libft
-	@echo " - Clearing objects files"
+	@Make clean -C ../libft
+	@$(call colourecho, " - Clearing object files")
 	@rm -f $(OBJS)
-	@echo "clean Done!"
+	@$(call colourecho, "clean done!")
 
 fclean: clean
-	@Make fclean -C libft
-	@echo " - Clearing executable file"
+	@Make fclean -C ../libft
+	@$(call colourecho, "Clearing executable files")
 	@rm -f $(NAME)
-	@echo "fclean Done!"
+	@$(call colourecho, "fclean done")
 
 re: fclean all
-	@echo "re Done!"
+	@$(call colourecho, "re Done!")
 
-format: norm me
+format: norme me
 
 norme: norm
 
 norm:
 	@clear
-	@echo "Norminette:"
+	@$(call colourecho2, "Norminette:")
 	@norminette $(SRCS)
 	@norminette $(HEADER)
 
@@ -111,6 +130,6 @@ qme:
 	fi
 	
 me: qme
-	cat -a author
+	cat -e author
 
 .PHONY: clean fclean re odir
