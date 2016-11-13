@@ -103,6 +103,7 @@ clean:
 	@Make clean -C ../libft
 	@$(call colourecho, " - Clearing object files")
 	@rm -f $(OBJS)
+	@rm -Rf $(OBJS_PATH)
 	@$(call colourecho, "clean done!")
 
 fclean: clean
