@@ -91,6 +91,7 @@ typedef struct	s_main
 	t_int_list	list_a;
 	t_int_list	list_b;
 	int			command;
+	int			verbose;
 }				t_main;
 
 /*
@@ -155,6 +156,7 @@ int				rotate_backwards(int *list[], int size);
 /*
 ** save_args.c
 */
+int				is_verbose(char **args);
 int				int_data(t_main *data);
 int				save_args(t_main *data, int argv, char **argc);
 /*

@@ -17,14 +17,16 @@ int	checker(t_main *data)
 	char	*input;
 
 	input = ft_strnew(20);
-	display_init(data);
+	if (data->verbose)
+		display_init(data);
 	if (!(read_input(&input)))
 		return (0);
 	while (validate_command(input) && !(check_order(data)))
 	{
 		save_input(data, input);
 		do_command(data);
-		display_status(data);
+		if (data->verbose)
+			display_status(data);
 		if (check_order(data))
 			break ;
 		if (!(read_input(&input)))
@@ -65,12 +67,11 @@ int	main(int argv, char **argc)
 	t_main	data;
 
 	ft_bzero(&data, sizeof(t_main));
+	data.verbose = is_verbose(argc);
 	if (argv == 1)
 		return (1);
 	else if (sorted_args(argv, argc))
-	{
 		ft_putstr("OK\n");
-	}
 	else
 	{
 		if (!(check_args(argv, argc)))

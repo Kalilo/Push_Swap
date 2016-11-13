@@ -24,9 +24,11 @@ int	check_letters(int argv, char **argc)
 	int		k;
 	int		l;
 
-	k = 1;
-	while (k < argv)
+	k = 0;
+	while (++k < argv)
 	{
+		if (!ft_strcmp(argc[k], "-v"))
+			continue ;
 		l = 0;
 		while (argc[k][l] && argc[k][l] != '\0')
 		{
@@ -34,7 +36,6 @@ int	check_letters(int argv, char **argc)
 				return (0);
 			l++;
 		}
-		k++;
 	}
 	return (1);
 }
@@ -64,9 +65,11 @@ int	check_double(int argv, char **argc)
 	int		k;
 	int		l;
 
-	k = 1;
-	while (k < argv)
+	k = 0;
+	while (++k < argv)
 	{
+		if (!ft_strcmp(argc[k], "-v"))
+			continue ;
 		l = 0;
 		while (argc[k][l] && argc[k][l] != '\0' && argc[k][l + 1])
 		{
@@ -79,7 +82,6 @@ int	check_double(int argv, char **argc)
 				return (0);
 			l++;
 		}
-		k++;
 	}
 	return (1);
 }
