@@ -22,3 +22,7 @@ rra: Rotates column 'a' by shifting all elements down the stack by 1.
 rrb: Rotates column 'b' by shifting all elements down the stack by 1.
 rrr: Performs both rra and rrb simultaneously.
 Any other command will result in a KO.
+
+#Other
+run with -c to display output in colour.
+run with -v for verbose mode.
