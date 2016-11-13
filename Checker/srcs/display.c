@@ -25,7 +25,7 @@ int	display_init(t_main *data)
 		ft_putchar('\n');
 		k++;
 	}
-	ft_putstr("_\t_\na\tb\n");
+	ft_putstr("_\t_\na\tb\n\n");
 	ft_putstr((COL) ? "\e[0m" : "");
 	return (1);
 }
