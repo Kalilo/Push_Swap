@@ -29,6 +29,12 @@ all: qme
 	@Make -C Checker
 	@$(call colourecho, "Making Push_Swap")
 	@Make -C Push_Swap
+	@if [ -f Checker/checker ]; then \
+		cp Checker/checker checker; \
+		fi
+	@if [ -f Push_Swap/push_swap ]; then \
+		cp Push_Swap/push_swap push_swap; \
+		fi
 	@$(call colourecho, "Done compiling all.")
 
 libft:
@@ -58,6 +64,13 @@ fclean:
 	@Make fclean -C Checker
 	@$(call colourecho, "Full cleaning Push_Swap")
 	@Make fclean -C Push_Swap
+	@if [ -f checker ]; then \
+		rm checker; \
+		fi
+	@if [ -f push_swap ]; then \
+		rm push_swap; \
+		fi
+	@$(call colourecho, "Done full cleaning folders")
 
 re: fclean all
 	@$(call colourecho, "re Done!")
