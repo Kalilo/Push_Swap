@@ -10,8 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-.DEFAULT_GOAL := re
-
 NAME = libft.a				\
 
 FLAGS = -Wall -Werror -Wextra -pedantic
