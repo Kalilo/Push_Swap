@@ -8,3 +8,6 @@ a.out
 *.plist
 *.dSYM
 objs
+checker
+push_swap
+libft.a
