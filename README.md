@@ -1,4 +1,3 @@
-# Push_Swap
 This project consists of two parts, Checker and Push_Swap
 
 #Checker
