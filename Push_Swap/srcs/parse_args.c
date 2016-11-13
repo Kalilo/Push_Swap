@@ -97,7 +97,7 @@ void			parse_args(t_env *env, int ac, char **av)
 		error_quit("Failed to malloc stack a\n");
 	if (!(env->stack_b = malloc(sizeof(*env->stack_b) * (ac - 1))))
 		error_quit("Failed to malloc stack b\n");
-	env->stack_a_size = ac - 1 - is_verbose(av) - is_colourful(av);
+	env->stack_a_size = ac - 1 - env->verbose - is_colourful(av);
 	env->stack_b_size = 0;
 	env->colours = is_colourful(av);
 	fill_stack(env->stack_a, ac, av);
