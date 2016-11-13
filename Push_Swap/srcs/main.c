@@ -43,7 +43,7 @@ static void		choose_sort(t_env *env)
 			}
 		}
 	}
-	ft_putchar('\n');
+	ft_putchar_fd('\n', (VER) ? 1 : 0);
 }
 
 static void		free_env(t_env *env)
@@ -57,23 +57,19 @@ static void		free_env(t_env *env)
 	free(env);
 }
 
-void			verbose(t_env *env, char **av)
+static void		verbose(t_env *env)
 {
-	int		k;
-
-	k = 0;
-	while (av[++k])
-		if (!ft_strcmp(av[k], "-v"))
-		{
-			ft_putendl("\n\033[1;37mStack A:\033[0;37m");
-			print_a(env);
-			ft_putendl("\033[1;37mStack B:\033[0;37m");
-			print_b(env);
-			ft_putstr("\033[1;32mCount number: \033[1;37m");
-			ft_putnbr(env->count);
-			ft_putchar('\n');
-			return ;
-		}
+	if (VER)
+	{
+		ft_putendl("\n\033[1;37mStack A:\033[0;37m");
+		print_a(env);
+		ft_putendl("\033[1;37mStack B:\033[0;37m");
+		print_b(env);
+		ft_putstr("\033[1;32mCount number: \033[1;37m");
+		ft_putnbr(env->count);
+		ft_putchar('\n');
+		return ;
+	}
 }
 
 int				main(int ac, char **av)
@@ -84,11 +80,12 @@ int				main(int ac, char **av)
 		return (-1);
 	ft_bzero(env, sizeof(t_env));
 	env->count = 0;
+	VER = is_verbose(av);
 	parse_args(env, ac, av);
 	calc_sorted(env);
 	if (!is_sorted(env))
 		choose_sort(env);
-	verbose(env, av);
+	verbose(env);
 	free_env(env);
 	return (0);
 }
