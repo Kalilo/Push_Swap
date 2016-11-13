@@ -18,7 +18,7 @@ char	*ft_strtolower(char *str)
 
 	k = -1;
 	if (!str || !*str)
-		return ;
+		return (NULL);
 	while (str[++k])
 		str[k] = ft_tolower(str[k]);
 	return (str);
