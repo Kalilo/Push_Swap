@@ -53,8 +53,8 @@ int	sorted_args(int av, char **ac)
 		while (++l < av)
 		{
 			tmp2 = ft_atoi(ac[l]);
-				if (tmp1 > tmp2)
-					return (0);
+			if (tmp1 > tmp2)
+				return (0);
 		}
 	}
 	return (1);

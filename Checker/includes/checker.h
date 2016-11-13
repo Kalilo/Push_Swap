@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef checker_H
-# define checker_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 /*
 ** ----------\
@@ -25,9 +25,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft.h"
-
-/* debug */
-# include <stdio.h>
 
 /*
 ** ----------\
@@ -117,7 +114,7 @@ int				check_order(t_main *data);
 /*
 ** checker.c
 */
-int 			checker(t_main *data);
+int				checker(t_main *data);
 /*
 ** commands.c
 */
