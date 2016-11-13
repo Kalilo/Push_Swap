@@ -35,6 +35,7 @@ all: qme
 	@if [ -f Push_Swap/push_swap ]; then \
 		cp Push_Swap/push_swap push_swap; \
 		fi
+	@clear
 	@$(call colourecho, "Done compiling all.")
 
 libft:
