@@ -74,7 +74,7 @@
 
 # define PUT_ANB ft_putnbr(L_A[k]);ft_putchar('\t');ft_putnbr(L_B[k])
 # define PUT_B ft_putchar('\t');ft_putnbr(L_B[k])
-# define INIT k = 0;m = 0
+# define INIT_VAR k = 0;m = 0
 
 /*
 ** ----------\
