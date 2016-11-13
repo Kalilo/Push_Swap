@@ -20,7 +20,7 @@ static int		valid_args(int ac, char **av)
 	i = 0;
 	while (++i < ac)
 	{
-		if (!ft_strcmp(av[i], "-v"))
+		if (!ft_strcmp(av[i], "-v") || !ft_strcmp(av[i], "-c"))
 			continue ;
 		j = -1;
 		while (av[i][++j])
@@ -58,10 +58,10 @@ static void		fill_stack(int *stack, int ac, char **av)
 
 	tmp = 0;
 	i = 0;
-	k = ac - is_verbose(av) - 1;
+	k = ac - is_verbose(av) - 1 - is_colourful(av);
 	while (++i < ac)
 	{
-		if (!ft_strcmp(av[i], "-v"))
+		if (!ft_strcmp(av[i], "-v") || !ft_strcmp(av[i], "-c"))
 			tmp += 1;
 		else
 			stack[k - i + tmp] = ft_atoi(av[i]);
@@ -97,8 +97,9 @@ void			parse_args(t_env *env, int ac, char **av)
 		error_quit("Failed to malloc stack a\n");
 	if (!(env->stack_b = malloc(sizeof(*env->stack_b) * (ac - 1))))
 		error_quit("Failed to malloc stack b\n");
-	env->stack_a_size = ac - 1 - is_verbose(av);
+	env->stack_a_size = ac - 1 - is_verbose(av) - is_colourful(av);
 	env->stack_b_size = 0;
+	env->colours = is_colourful(av);
 	fill_stack(env->stack_a, ac, av);
 	if (has_doublons(env))
 		error_quit("Invalid parameters, doubles aren't allowed\n");

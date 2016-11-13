@@ -28,6 +28,6 @@ void	ra(t_env *env)
 			i--;
 		}
 		env->stack_a[0] = tmp;
-		ft_putstr("\033[32;1mRA ");
+		ft_putstr((env->colours) ? "\033[32;1mRA " : "RA ");
 	}
 }

@@ -38,3 +38,16 @@ int		is_verbose(char **args)
 			v++;
 	return (v);
 }
+
+int		is_colourful(char **args)
+{
+		int		v;
+	int		k;
+
+	v = 0;
+	k = 0;
+	while (args[++k])
+		if (!ft_strcmp(args[k], "-c"))
+			v++;
+	return (v);	
+}

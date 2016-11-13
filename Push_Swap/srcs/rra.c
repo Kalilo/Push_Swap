@@ -28,6 +28,6 @@ void	rra(t_env *env)
 			i++;
 		}
 		env->stack_a[env->stack_a_size - 1] = tmp;
-		ft_putstr("\033[35;1mRRA ");
+		ft_putstr((env->colours) ? "\033[35;1mRRA " : "RRA ");
 	}
 }

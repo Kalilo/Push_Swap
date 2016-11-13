@@ -20,6 +20,6 @@ void	pb(t_env *env)
 		env->stack_b[env->stack_b_size] = env->stack_a[env->stack_a_size - 1];
 		env->stack_b_size++;
 		env->stack_a_size--;
-		ft_putstr("\033[34;1mPB ");
+		ft_putstr((env->colours) ? "\033[34;1mPB " : "PB ");
 	}
 }

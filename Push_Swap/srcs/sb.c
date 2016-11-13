@@ -24,6 +24,6 @@ void	sb(t_env *env)
 		val2 = env->stack_b[env->stack_b_size - 1];
 		env->stack_b[env->stack_b_size - 2] = val2;
 		env->stack_b[env->stack_b_size - 1] = val1;
-		ft_putstr("\033[34;1msb ");
+		ft_putstr((env->colours) ? "\033[34;1mSB " : "SB ");
 	}
 }

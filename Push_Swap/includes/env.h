@@ -25,6 +25,7 @@ typedef struct	s_env
 	int			max;
 	int			count;
 	int			pre_sort;
+	char		colours;
 }				t_env;
 
 #endif
