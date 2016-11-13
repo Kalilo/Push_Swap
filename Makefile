@@ -25,39 +25,39 @@ endef
 all: qme
 	@$(call colourecho, "Making libft")
 	@Make -C libft
-	@$(call colourecho, "Making checker")
-	@Make -C checker
-	@$(call colourecho, "Making checker")
-	@Make -C checker
+	@$(call colourecho, "Making Checker")
+	@Make -C Checker
+	@$(call colourecho, "Making Push_Swap")
+	@Make -C Push_Swap
 	@$(call colourecho, "Done compiling all.")
 
 libft:
 	@$(call colourecho, "Making libft")
 	@Make -C libft
 
-checker:
-	@$(call colourecho, "Making checker")
-	@Make -C checker
+Checker:
+	@$(call colourecho, "Making Checker")
+	@Make -C Checker
 
-push_swap:
-	@$(call colourecho, "Making push_swap")
-	@Make -C push_swap
+Push_Swap:
+	@$(call colourecho, "Making Push_Swap")
+	@Make -C Push_Swap
 
 clean:
 	@$(call colourecho, "Cleaning libft")
 	@Make clean -C libft
-	@$(call colourecho, "Cleaning checker")
-	@Make clean -C checker
-	@$(call colourecho, "Cleaning push_swap")
-	@Make clean -C push_swap
+	@$(call colourecho, "Cleaning Checker")
+	@Make clean -C Checker
+	@$(call colourecho, "Cleaning Push_Swap")
+	@Make clean -C Push_Swap
 
 fclean:
 	@$(call colourecho, "Full cleaning libft")
 	@Make fclean -C libft
-	@$(call colourecho, "Full cleaning checker")
-	@Make fclean -C checker
-	@$(call colourecho, "Full cleaning push_swap")
-	@Make fclean -C push_swap
+	@$(call colourecho, "Full cleaning Checker")
+	@Make fclean -C Checker
+	@$(call colourecho, "Full cleaning Push_Swap")
+	@Make fclean -C Push_Swap
 
 re: fclean all
 	@$(call colourecho, "re Done!")
@@ -70,10 +70,10 @@ norm:
 	@clear
 	@$(call colourecho2, "Norminette on libft")
 	@Make norme -C libft
-	@$(call colourecho2, "Norminette on checker")
-	@Make norme -C checker
-	@$(call colourecho2, "Norminette on push_swap")
-	@Make norme -C push_swap
+	@$(call colourecho2, "Norminette on Checker")
+	@Make norme -C Checker
+	@$(call colourecho2, "Norminette on Push_Swap")
+	@Make norme -C Push_Swap
 
 qme:
 	@if [ ! -f author ]; then \
