@@ -26,7 +26,8 @@ int	read_input(char **str)
 	while (buff != ' ' && buff != '\n' && buff != '\0' && buff != '\r'
 			&& k < 5)
 	{
-		str[0][++k] = buff;
+		if (ft_isprint(buff))
+			str[0][++k] = buff;
 		if (!read(0, &buff, 1))
 			return (0);
 	}
