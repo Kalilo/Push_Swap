@@ -14,20 +14,21 @@
 
 int		int_data(t_main *data)
 {
-	if ((L_A = (int *)malloc(sizeof(int) * 4000010)) == NULL)
-		return (0);
-	if ((L_B = (int *)malloc(sizeof(int) * 4000010)) == NULL)
-		return (0);
+	static int	a[1000001];
+	static int	b[1000001];
+
+	L_A = a;
+	L_B = b;
 	data->command = 0;
 	return (1);
 }
 
 int		save_args(t_main *data, int argv, char **argc)
 {
-	int		k;
-	int		l;
-	int		m;
-	char	**nums;
+	int			k;
+	int			l;
+	int			m;
+	char		**nums;
 
 	k = 0;
 	m = 0;

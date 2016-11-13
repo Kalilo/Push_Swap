@@ -46,12 +46,24 @@ static void		choose_sort(t_env *env)
 	ft_putchar('\n');
 }
 
+static void		free_env(t_env *env)
+{
+	if (env->stack_a)
+		free(env->stack_a);
+	if (env->stack_b)
+		free(env->stack_b);
+	if (env->sorted)
+		free(env->sorted);
+	free(env);
+}
+
 int				main(int ac, char **av)
 {
 	t_env	*env;
 
 	if (!(env = malloc(sizeof(*env))))
 		return (-1);
+	ft_bzero(env, sizeof(t_env));
 	env->count = 0;
 	parse_args(env, ac, av);
 	calc_sorted(env);
@@ -64,5 +76,6 @@ int				main(int ac, char **av)
 	ft_putstr("\033[1;32mCount number: \033[1;37m");
 	ft_putnbr(env->count);
 	ft_putchar('\n');
+	free_env(env);
 	return (0);
 }
