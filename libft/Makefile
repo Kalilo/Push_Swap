@@ -97,6 +97,7 @@ SRCS4 = ft_lstnew.c			\
 		ft_die.c			\
 		ft_print_memory.c 	\
 		ft_atol.c			\
+		ft_strtolower.c		\
 
 
 SRCS_ALL = $(SRCS1) $(SRCS2) $(SRCS3) $(SRCS4)

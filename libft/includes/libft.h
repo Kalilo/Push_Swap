@@ -142,5 +142,6 @@ void				ft_print_hex(unsigned char num);
 void				ft_print_memory(const void *addr, size_t size);
 void				ft_die(char *str);
 long int			ft_atol(const char *str);
+char				*ft_strtolower(char *str);
 
 #endif
