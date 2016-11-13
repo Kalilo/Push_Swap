@@ -1,4 +1,14 @@
-all: qme $(NAME)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: khansman <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/11/13 08:49:59 by khansman          #+#    #+#              #
+#    Updated: 2016/11/13 08:50:03 by khansman         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 define colourecho
 	@tput setaf 35
@@ -12,7 +22,7 @@ define colourecho2
 	@tput sgr0
 endef
 
-$(NAME):
+all: qme
 	@$(call colourecho, "Making libft")
 	@Make -C libft
 	@$(call colourecho, "Making checker")
