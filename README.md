@@ -24,5 +24,5 @@ rrr: Performs both rra and rrb simultaneously.
 Any other command will result in a KO.
 
 #Other
-run with -c to display output in colour.
-run with -v for verbose mode.
+Run with -c to display output in colour.
+Run with -v for verbose mode.
