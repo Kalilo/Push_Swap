@@ -26,6 +26,7 @@ typedef struct	s_env
 	int			count;
 	int			pre_sort;
 	char		colours;
+	int			verbose;
 }				t_env;
 
 #endif
