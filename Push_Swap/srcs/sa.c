@@ -24,7 +24,6 @@ void	sa(t_env *env)
 		val2 = env->stack_a[env->stack_a_size - 1];
 		env->stack_a[env->stack_a_size - 2] = val2;
 		env->stack_a[env->stack_a_size - 1] = val1;
-		ft_putstr_fd((env->colours) ? "\033[31;1mSA " : "SA ",
-			(VER) ? 1 : 0);
+		ft_putstr((env->colours) ? "\033[31;1mSA " : "SA\n");
 	}
 }

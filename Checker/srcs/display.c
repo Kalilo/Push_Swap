@@ -55,6 +55,6 @@ int	display_status(t_main *data)
 			ft_putnbr(L_B[k]);
 			ft_putchar('\n');
 		}
-	ft_putstr((COL) ? "_\t_\na\tb\n\e[0m" : "_\t_\na\tb\n");
+	ft_putstr((COL) ? "_\t_\na\tb\n\n\e[0m" : "_\t_\na\tb\n\n");
 	return (1);
 }

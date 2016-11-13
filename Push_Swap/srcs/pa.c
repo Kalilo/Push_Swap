@@ -20,6 +20,6 @@ void	pa(t_env *env)
 		env->stack_a[env->stack_a_size] = env->stack_b[env->stack_b_size - 1];
 		env->stack_a_size++;
 		env->stack_b_size--;
-		ft_putstr_fd((env->colours) ? "\033[31;1mPA " : "PA ", (VER) ? 1 : 0);
+		ft_putstr((env->colours) ? "\033[31;1mPA " : "PA\n");
 	}
 }

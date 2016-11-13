@@ -43,7 +43,7 @@ static void		choose_sort(t_env *env)
 			}
 		}
 	}
-	ft_putchar_fd('\n', (VER) ? 1 : 0);
+	ft_putchar('\n');
 }
 
 static void		free_env(t_env *env)

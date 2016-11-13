@@ -28,7 +28,6 @@ void	rrb(t_env *env)
 			i++;
 		}
 		env->stack_b[env->stack_b_size - 1] = tmp;
-		ft_putstr_fd((env->colours) ? "\033[36;1mRRB " : "RRB ",
-			(VER) ? 1 : 0);
+		ft_putstr((env->colours) ? "\033[36;1mRRB " : "RRB\n");
 	}
 }

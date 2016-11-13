@@ -19,9 +19,9 @@ void	print_b(t_env *env)
 	i = 0;
 	while (i < env->stack_b_size)
 	{
-		ft_putnbr_fd(env->stack_b[i], (VER) ? 1 : 0);
-		ft_putchar_fd(' ', (VER) ? 1 : 0);
+		ft_putnbr(env->stack_b[i]);
+		ft_putchar(' ');
 		i++;
 	}
-	ft_putchar_fd('\n', (VER) ? 1 : 0);
+	ft_putchar('\n');
 }
