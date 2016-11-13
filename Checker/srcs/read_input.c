@@ -31,6 +31,7 @@ int	read_input(char **str)
 			return (0);
 	}
 	str[0][++k] = '\0';
+	*str = ft_strtolower(*str);
 	return (1);
 }
 
