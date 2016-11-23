@@ -107,15 +107,15 @@ SRCS = $(addprefix $(SRCS_PATH), $(SRCS_ALL))
 OBJS = $(addprefix $(OBJS_PATH), $(OBJS_ALL))
 
 define colourecho
-tput setaf 4
-@echo $1
-tput sgr0
+	tput setaf 4
+	@echo $1
+	tput sgr0
 endef
 
 define colourecho2
-tput setaf 10
-@echo $1
-tput sgr0
+	tput setaf 10
+	@echo $1
+	tput sgr0
 endef
 
 all:
